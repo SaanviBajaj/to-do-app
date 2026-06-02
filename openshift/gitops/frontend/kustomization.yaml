@@ -9,6 +9,6 @@ commonLabels:
   app.kubernetes.io/component: frontend
 
 images:
-  - name: todo-web
-    newName: todo-web
+  - name: image-registry.openshift-image-registry.svc:5000/gitops-run/todo-web
+    newName: image-registry.openshift-image-registry.svc:5000/gitops-run/todo-web
     newTag: latest

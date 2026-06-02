@@ -19,7 +19,7 @@ items:
         spec:
           containers:
             - name: web
-              image: todo-web:latest
+              image: image-registry.openshift-image-registry.svc:5000/gitops-run/todo-web:latest
               imagePullPolicy: Always
               ports:
                 - containerPort: 8080
