@@ -34,7 +34,7 @@ items:
             fsGroup: 999
           containers:
             - name: postgres
-              image: quay.io/rh-ee-sbajaj/todo-db:v5
+              image: quay.io/rh-ee-sbajaj/todo-db:latest
               imagePullPolicy: Always
               ports:
                 - containerPort: 5432
