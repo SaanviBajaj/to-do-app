@@ -30,12 +30,16 @@ items:
           labels:
             app: todo-db
         spec:
-          securityContext:
-            fsGroup: 999
           containers:
             - name: postgres
               image: quay.io/rh-ee-sbajaj/todo-db:latest
               imagePullPolicy: Always
+              securityContext:
+                allowPrivilegeEscalation: false
+                capabilities:
+                  drop:
+                    - ALL
+                runAsNonRoot: true
               ports:
                 - containerPort: 5432
                   name: postgres
