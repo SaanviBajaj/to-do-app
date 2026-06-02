@@ -21,6 +21,12 @@ items:
             - name: web
               image: quay.io/rh-ee-sbajaj/todo-web:latest
               imagePullPolicy: Always
+              securityContext:
+                allowPrivilegeEscalation: false
+                capabilities:
+                  drop:
+                    - ALL
+                runAsNonRoot: true
               ports:
                 - containerPort: 8080
                   name: http
